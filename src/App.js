@@ -1,24 +1,83 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Footer from './components/Footer';
 
 function App() {
+  const [form, setForm] = React.useState({
+    email: '',
+    password: '',
+  });
+
+  const [toggleClass, setToggleClass] = React.useState(false);
+
+  const handleForm = (e) => {
+    setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
+  };
+
+  const annoyingSubmitButton = () => {
+    if (form.password.length < 6) {
+      setToggleClass((prevState) => !prevState);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <section className="form-section">
+        <h1 className="heading">Annoying Submit Button 😡</h1>
+        <form autoComplete="false">
+          <div className="input-block">
+            <label className="label">
+              Email <span className="requiredLabel">*</span>
+            </label>
+            <input
+              className={`input ${
+                form.email.length < 6 ? 'wrong-input' : 'correct-input'
+              }`}
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleForm}
+            />
+          </div>
+          <div className="input-block">
+            <label className="label">
+              Password <span className="requiredLabel">*</span>
+            </label>
+            <input
+              className={`input ${
+                form.password.length < 6 ? 'wrong-input' : 'correct-input'
+              }`}
+              type="password"
+              name="password"
+              value={form.password}
+              onChange={handleForm}
+            />
+          </div>
+          <div>
+            {form.password.length < 6 ? (
+              <p className="warning-message">
+                Password length should be more than 6
+              </p>
+            ) : (
+              ''
+            )}
+          </div>
+          <div
+            className={`submit-button-wrapper ${toggleClass ? 'float' : ''}`}
+          >
+            <button
+              className={`submit-button ${
+                form.password.length > 6 ? 'button-success' : ''
+              }`}
+              onMouseEnter={annoyingSubmitButton}
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </section>
+      <Footer />
+    </>
   );
 }
 
