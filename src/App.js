@@ -41,6 +41,7 @@ function App() {
               name="email"
               value={form.email}
               onChange={handleForm}
+              required
             />
           </div>
           <div className="input-block">
@@ -55,6 +56,7 @@ function App() {
               name="password"
               value={form.password}
               onChange={handleForm}
+              required
             />
           </div>
           <div>
