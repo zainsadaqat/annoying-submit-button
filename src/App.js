@@ -24,7 +24,11 @@ function App() {
     <>
       <section className="form-section">
         <h1 className="heading">Annoying Submit Button 😡</h1>
-        <form autoComplete="false">
+        <form
+          autoComplete="false"
+          action="https://formspree.io/f/meqvlgqr"
+          method="POST"
+        >
           <div className="input-block">
             <label className="label">
               Email <span className="requiredLabel">*</span>
