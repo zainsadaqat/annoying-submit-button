@@ -41,6 +41,7 @@ function App() {
               name="email"
               value={form.email}
               onChange={handleForm}
+              placeholder="zain.sadaqet@gmail.com"
               required
             />
           </div>
