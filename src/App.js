@@ -42,6 +42,7 @@ function App() {
               value={form.email}
               onChange={handleForm}
               placeholder="zain.sadaqet@gmail.com"
+              tabIndex={-1}
               required
             />
           </div>
@@ -57,6 +58,8 @@ function App() {
               name="password"
               value={form.password}
               onChange={handleForm}
+              minLength="6"
+              tabIndex={-1}
               required
             />
           </div>
@@ -73,6 +76,7 @@ function App() {
             className={`submit-button-wrapper ${toggleClass ? 'float' : ''}`}
           >
             <button
+              tabIndex={-1}
               className={`submit-button ${
                 form.password.length > 6 ? 'button-success' : ''
               }`}
