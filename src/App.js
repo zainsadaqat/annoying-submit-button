@@ -24,7 +24,7 @@ function App() {
     <>
       <section className="form-section">
         <h1 className="heading">Annoying Submit Button 
-        <img width="50" heigth="50" src="https://media.tenor.com/G1tqTU9oo9YAAAAd/angry-emoji.gif"/>
+        <img width="50" heigth="50" src="https://media.tenor.com/G1tqTU9oo9YAAAAd/angry-emoji.gif" alt="😡"/>
         </h1>
         <form
           autoComplete="false"
