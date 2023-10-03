@@ -23,7 +23,9 @@ function App() {
   return (
     <>
       <section className="form-section">
-        <h1 className="heading">Annoying Submit Button 😡</h1>
+        <h1 className="heading">Annoying Submit Button 
+        <img width="50" heigth="50" src="https://media.tenor.com/G1tqTU9oo9YAAAAd/angry-emoji.gif"/>
+        </h1>
         <form
           autoComplete="false"
           action="https://formspree.io/f/meqvlgqr"
