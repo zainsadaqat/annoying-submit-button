@@ -18,6 +18,10 @@ body {
   margin-bottom: 1em;
 }
 
+.heading img{
+  margin-bottom: -10px;
+}
+
 .form-section {
   min-height: 95vh;
   display: grid;
